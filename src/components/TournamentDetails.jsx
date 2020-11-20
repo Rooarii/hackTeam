@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import "../styles/TournamentDetails.css";
 const tournamentsArr =
   [
     {
@@ -166,14 +166,14 @@ function TournamentDetails() {
         <div className="tournament-info">
           <div>
             <h2 className="name">{tournament.tournamentName}</h2>
-            <div>{tournament.tournamentDate}</div>
-            <div>Number of participants: {tournament.participants}</div>
-            <div>Prize: {tournament.prize}</div>
-            <div>Price: {tournament.price}</div>
-            <div className="description">
-              Description of the tournament: {tournament.description}
+            <div className="tournamentItems">{tournament.tournamentDate}</div>
+            <div className="tournamentItems">Number of participants: {tournament.participants}</div>
+            <div className="tournamentItems">Prize: {tournament.prize}</div>
+            <div className="tournamentItems">Price: {tournament.price}</div>
+            <div className="description ">
+              <span className="underline">Description of the tournament:</span> {tournament.description}
             </div>
-            <div className="location">Location: {tournament.tournamentLocation}</div>
+            <div className="location tournamentItems">Location: {tournament.tournamentLocation}</div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import "../styles/Profile.css"
 
 const knightsArr = [
   {
@@ -114,7 +114,7 @@ function Profile() {
 
   return (
 
-    <div>
+    <div className="profileCard">
       <Link to="/" >
         <h1 className="site-logo">FYT</h1>
       </Link>
@@ -123,32 +123,44 @@ function Profile() {
         <h3>{knight.knightName}</h3>
         <div>{knight.age}</div>
         <div>{knight.alive ? "Alive" : "Dead"}</div>
+        <div>Moto: {knight.moto}</div>
+        <div>Region: {knight.region}</div>
+
+
       </div>
       <div className="profile-container">
-        <div>Number of victories: {knight.victories}</div>
-        <div>Number of defeats: {knight.defeats}</div>
+        
       </div>
 
       <div className="profile-info-container">
-        <div className="profile-container">
+        <div className="profile-container ">
           <h4>My stats</h4>
           <div>Rank: {knight.ranking}</div>
+          <div>Number of victories: {knight.victories}</div>
+          <div>Number of defeats: {knight.defeats}</div>
           <div>
-            <img src={knight.badge} alt="badge" />
+            <img src={knight.rankingIcons} alt="badge" className="icons" />
           </div>
           <div>
-            <img src={knight.banner} alt="badge" />
+            <img src={knight.banner} alt="badge" className="icons"/>
           </div>
+          <div>
+            <img src={knight.successIcons} alt="successIcon" className="icons"/>
+          </div>
+          <div>
+            <img src={knight.aliveIcons} alt="aliveIcon" className="icons"/>
+          </div>
+          
         </div>
 
-        <div className="profile-container">
+        <div className="profile-container myCaract">
           <h4>My caracteristics</h4>
-          <div>My weapons: {knight.weapons}</div>
-          <div>My mount: {knight.mount ? knight.mountType + "Name:" + knight.mountName : "none"}</div>
-          <div>Gear: {knight.armors}</div>
-          <div>Region: {knight.region}</div>
-          <div>Pigeon: {knight.pigeon}</div>
-          <div>Moto: {knight.moto}</div>
+          
+          <div><img src={knight.IconsWeapon} alt="weapons" className="icons"/> : {knight.weapons}</div>
+          <div><img src={knight.mountTypeIcons} alt="mount" className="icons"/>: {knight.mount ? knight.mountType + "Name:" + knight.mountName : "none"}</div>
+          <div><img src={knight.armorsIcons} alt="gear" className="icons"/>: {knight.armors}</div>
+          <div><img src={knight.pigeonIcons} alt="pigeon" className="icons"/>: {knight.pigeon}</div>
+          
         </div>
       </div>
     </div>

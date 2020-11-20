@@ -1,0 +1,15 @@
+.profileCard{
+    font-size:2em;
+}
+
+.icons{
+    width: 8vw;
+    height: 8vh;
+}
+.myCaract{
+    text-align: left;
+    margin-left:1vw;
+}
+.profile-container div {
+    margin-bottom: 1vh;
+}
